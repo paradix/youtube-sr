@@ -469,6 +469,7 @@ class Util {
             },
             videos: Util.getNext(nextData ?? {}) || [],
             streamingData: info.info.streamingData || null,
+            startTime: info.info.playabilityStatus?.liveStreamability?.liveStreamabilityRenderer.offlineSlate?.liveStreamOfflineSlateRenderer.scheduledStartTime || null,
             music: musicInfo
         });
 
