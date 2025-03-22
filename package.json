@@ -13,6 +13,7 @@
     "prepublishOnly": "bun run build",
     "build:node": "tsup",
     "build:deno": "node scripts/deno.js",
+    "prepare": "tsup",
     "format": "prettier --write \"**/*.{js,ts}\""
   },
   "repository": {
