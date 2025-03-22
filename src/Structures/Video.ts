@@ -83,7 +83,8 @@ export class Video {
     videos?: Video[];
     likes: number;
     dislikes: number;
-    live: boolean;
+    live?: boolean;
+    upcoming?: boolean;
     private: boolean;
     tags: string[];
     nsfw = false;
@@ -91,7 +92,7 @@ export class Video {
     unlisted = false;
     streamingData?: VideoStreamingData | null;
     music: MusicInfo[];
-    startTime: Date;
+    startTime?: Date;
     constructor(data: any) {
         if (!data) throw new Error(`Cannot instantiate the ${this.constructor.name} class without data!`);
 
@@ -118,6 +119,7 @@ export class Video {
         this.likes = data.ratings?.likes || 0;
         this.dislikes = data.ratings?.dislikes || 0;
         this.live = !!data.live;
+        this.upcoming = !!data.upcoming;
         this.private = !!data.private;
         this.tags = data.tags || [];
         this.nsfw = Boolean(data.nsfw);

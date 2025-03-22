@@ -447,6 +447,7 @@ class Util {
             unlisted: !!info.info.microformat?.playerMicroformatRenderer?.isUnlisted,
             nsfw: info.info.microformat?.playerMicroformatRenderer?.isFamilySafe === false,
             live: info.info.videoDetails.isLiveContent,
+            upcoming: info.info.videoDetails.isUpcoming,
             duration: parseInt(info.info.videoDetails.lengthSeconds) * 1000,
             shorts: [`{"webCommandMetadata":{"url":"/shorts/${info.info.videoDetails.videoId}"`, `{window['ytPageType'] = "shorts";`, `"/hashtag/shorts"`].some((r) => html.includes(r)),
             duration_raw: Util.durationString(Util.parseMS(parseInt(info.info.videoDetails.lengthSeconds) * 1000 || 0)),
